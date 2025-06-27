@@ -2,17 +2,17 @@ import os
 import torch
 from model import CDTF_TEM
 from model import DSformer
-from model import iTransformer
-from model import Transformer
-from model import PatchTST
+from model import iTransformer_TEM
+from model import Transformer_TEM
+from model import PatchTST_TEM
 
 
 class Exp_Basic(object):
     def __init__(self, args):
         self.args = args
         self.model_dict = {
-            'CDTF_TEM': CDTF_TEM, 'iTransformer': iTransformer, 'DSformer': DSformer,
-            'Transformer': Transformer, 'PatchTST': PatchTST
+            'CDTF_TEM': CDTF_TEM, 'iTransformer_TEM': iTransformer_TEM, 'DSformer': DSformer,
+            'Transformer_TEM': Transformer_TEM, 'PatchTST_TEM': PatchTST_TEM
         }
         self.device = self._acquire_device()
         self.model = self._build_model().to(self.device)

@@ -1,6 +1,6 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from model import PatchTST
+from model import PatchTST_TEM
 from utils1.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils1.metrics import metric
 
