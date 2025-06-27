@@ -262,7 +262,7 @@ class Exp_Long_Term_Forecast(Exp_Basic):
                 print("Early stopping")
                 break
             if not choose_warm_up:
-                adjust_learning_rate_two(model_optim, epoch + 1, self.args)
+                adjust_learning_rate_two(model_optim, model_optim1, epoch + 1, self.args)
 
             # get_cka(self.args, setting, self.model, train_loader, self.device, epoch)
 
