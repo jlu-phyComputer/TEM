@@ -16,12 +16,12 @@ def main():
     torch.manual_seed(fix_seed)
     np.random.seed(fix_seed)
 
-    parser = argparse.ArgumentParser(description='Transformer')
+    parser = argparse.ArgumentParser(description='Transformer_TEM')
 
     # basic config
     parser.add_argument('--is_training', type=int, required=False, default=1, help='status')
     parser.add_argument('--model_id', type=str, required=False, default='ECL_96_96', help='model id')
-    parser.add_argument('--model', type=str, required=False, default='Transformer')
+    parser.add_argument('--model', type=str, required=False, default='Transformer_TEM')
 
     # data loader
     parser.add_argument('--data', type=str, required=False, default='custom', help='dataset type')
