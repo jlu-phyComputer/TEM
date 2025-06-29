@@ -30,24 +30,26 @@ def adjust_learning_rate(optimizer, epoch, args):
 
 def adjust_learning_rate_two(optimizer, optimizer1, epoch, args):
     # lr = args.learning_rate * (0.2 ** (epoch // 2))
-    if args.lradj == 'type1':
-        lr_adjust = {epoch: args.learning_rate * (0.5 ** ((epoch - 1) // 1))}
-    elif args.lradj == 'type2':
-        lr_adjust = {
-            2: 5e-5, 4: 1e-5, 6: 5e-6, 8: 1e-6,
-            10: 5e-7, 15: 1e-7, 20: 5e-8
-        }
+    lr_adjust = {epoch: args.learning_rate * (0.5 ** ((epoch - 1) // 1))}
+    # if args.lradj == 'type1':
+    #     lr_adjust = {epoch: args.learning_rate * (0.5 ** ((epoch - 1) // 1))}
+    # elif args.lradj == 'type2':
+    #     lr_adjust = {
+    #         2: 5e-5, 4: 1e-5, 6: 5e-6, 8: 1e-6,
+    #         10: 5e-7, 15: 1e-7, 20: 5e-8
+    #     }
     lr_adjust1 = {epoch: args.learning_rate * (0.5 ** ((epoch - 1) // 1))}
 
     if epoch in lr_adjust.keys():
-        lr = lr_adjust[epoch]
+        lr1 = lr_adjust[epoch]
+        lr2 = lr_adjust1[epoch]
         # if lr <= 1e-05:
         #     lr = 1e-05
         for param_group in optimizer.param_groups:
-            param_group['lr'] = lr
+            param_group['lr'] = lr1
         for param_group in optimizer1.param_groups:
-            param_group['lr'] = lr
-        print('Updating learning rate to {}'.format(lr))
+            param_group['lr'] = lr2
+        print('Updating learning rate to {}'.format(lr1))
 
 
 class EarlyStopping:
