@@ -12,7 +12,7 @@ def main():
     torch.manual_seed(fix_seed)
     np.random.seed(fix_seed)
 
-    parser = argparse.ArgumentParser(description='iTransformer')
+    parser = argparse.ArgumentParser(description='iTransformer_TEM')
 
     # basic config
     parser.add_argument('--is_training', type=int, required=False, default=1, help='status')
