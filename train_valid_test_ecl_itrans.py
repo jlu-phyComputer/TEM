@@ -17,7 +17,7 @@ def main():
     # basic config
     parser.add_argument('--is_training', type=int, required=False, default=1, help='status')
     parser.add_argument('--model_id', type=str, required=False, default='ECL_96_96', help='model id')
-    parser.add_argument('--model', type=str, required=False, default='iTransformer')
+    parser.add_argument('--model', type=str, required=False, default='iTransformer_TEM')
 
     # data loader
     parser.add_argument('--data', type=str, required=False, default='custom', help='dataset type')
