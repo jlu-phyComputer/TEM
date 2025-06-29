@@ -15,7 +15,7 @@ def main(para_dict):
     if not os.path.exists(save_path):
         os.mkdir(save_path)
     pred_len = para_dict["pred_len"]
-    lr = para_dict["lr"]
+    lr = 0.0007
     weight_decay = para_dict["weight_decay"]
     use_warm_up = para_dict["use_warm_up"]
     warm_up_len = para_dict["warm_up_len"]
@@ -206,24 +206,8 @@ def main(para_dict):
 
 
 if __name__ == "__main__":
-    para_dict = {'pred_len': 96, 'lr': 0.0007,
+    para_dict = {'pred_len': 96,
                  'weight_decay': 9e-06, 'use_warm_up': False, 'warm_up_len': 1100,
                  'warm_up_factor': 0.0008, 'batch_size': 16, 'use_weight_dec': True}
     main(para_dict)
-    print(para_dict)
-
-    # lr_list2 = [round(0.006 + 0.0001 * (i - 100), 4) for i in range(50, 201)]
-    # lr_list = ([0.00001, 0.00002, 0.00003, 0.00004, 0.00005, 0.00006, 0.00007, 0.00008, 0.00009,
-    #             0.0001, 0.0002, 0.0003, 0.0004, 0.0005, 0.0006, 0.0007, 0.0008, 0.0009] +
-    #            [round(0.006 + 0.0001 * (i - 100), 4) for i in range(50, 60)])
-    # # lr_list.reverse()
-    # for i in range(len(lr_list)):
-    #     lr = lr_list[i]
-    #     print("lr=", lr_list[i])
-    #     para_dict = {'pred_len': 96, 'lr': lr,
-    #                  'weight_decay': 9e-06, 'use_warm_up': False, 'warm_up_len': 1100,
-    #                  'warm_up_factor': 0.0008, 'batch_size': 16, 'use_weight_dec': True}
-    #     main(para_dict)
-    #     print("lr=", lr_list[i])
-    #     print(para_dict)
 
