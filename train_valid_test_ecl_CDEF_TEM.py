@@ -177,7 +177,6 @@ def main(para_dict):
             if args.do_predict:
                 print('>>>>>>>predicting : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
                 exp.predict(setting, True)
-
             torch.cuda.empty_cache()
     else:
         ii = 0
