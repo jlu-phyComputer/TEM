@@ -16,6 +16,7 @@ def main(para_dict):
         os.mkdir(save_path)
     pred_len = para_dict["pred_len"]
     lr = 0.0007
+    lr = 9.05e-4
     weight_decay = para_dict["weight_decay"]
     use_warm_up = para_dict["use_warm_up"]
     warm_up_len = para_dict["warm_up_len"]
