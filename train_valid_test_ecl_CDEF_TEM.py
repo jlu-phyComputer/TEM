@@ -15,7 +15,6 @@ def main(para_dict):
     if not os.path.exists(save_path):
         os.mkdir(save_path)
     pred_len = para_dict["pred_len"]
-    lr = 0.0007
     lr = 9.05e-4
     weight_decay = para_dict["weight_decay"]
     use_warm_up = para_dict["use_warm_up"]
@@ -26,6 +25,7 @@ def main(para_dict):
     d_model = 512
     # e_layers = para_dict["e_layers"]
     # d_model = para_dict["d_model"]
+    lr = 0.0007
     # 随机种子
     fix_seed = 2023
     random.seed(fix_seed)
